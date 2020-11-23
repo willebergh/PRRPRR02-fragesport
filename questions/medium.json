@@ -1,0 +1,26 @@
+{
+    "difficulty": "Normal",
+    "questions": [
+        {
+            "question": "Vilket språk är detta program skrivet i?",
+            "right_answer": "Python",
+            "wrong_answers": [
+                "JavaScript",
+                "C#",
+                "C++",
+                "TypeScript",
+                "HTML",
+                "CSS"
+            ]
+        },
+        {
+            "question": "Vad heter programmeringsläraren?",
+            "right_answer": "Jens",
+            "wrong_answers": [
+                "Henry",
+                "Erik",
+                "Calle"
+            ]
+        }
+    ]
+}
