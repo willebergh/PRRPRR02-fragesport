@@ -34,20 +34,22 @@ class Game:
         difficulty = self.ask_for_difficulty()
         questions = self.get_questions(difficulty)
       
-        right_answers = 0
-        wrong_answers = 0
+        self.right_answers = 0
+        self.wrong_answers = 0
+        self.questionNumber = 0
       
         for i in questions:
             self.clear()
+            self.questionNumber += 1;
             if self.ask_question(i):
-                right_answers += 1
+                self.right_answers += 1
             else:
-                wrong_answers += 1
+                self.wrong_answers += 1
       
         self.clear()
         print(f"\nGrattis!")    
         print(f"Du har nu svarat på alla frågor!")
-        print(f"\nResultat: {right_answers}/{right_answers + wrong_answers} rätt")
+        print(f"\nResultat: {self.right_answers}/{self.questionNumber} rätt")
 
     # Method for asking the user what difficulty they want to use
     def ask_for_difficulty(self):
@@ -108,7 +110,7 @@ class Game:
             }.get(a)
 
         def handle_user_input():
-            print(f"\n{question}\n")
+            print(f"\nFråga #{self.questionNumber}: {question}\n")
             for i in range(len(answer_options)):
                 print(f"{convert_index_1x2(i)}: {answer_options[i]}")
 
@@ -125,3 +127,6 @@ class Game:
                 return handle_user_input()
 
         return handle_user_input()
+
+
+game = Game()
